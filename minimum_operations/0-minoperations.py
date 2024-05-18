@@ -1,20 +1,30 @@
 #!/usr/bin/python3
-"""This script is all about how to  use python with concepts of mathematics to solve a problem for instance in this scenarion we are gonna use factors"""
- 
+"""
+This script demonstrates how to use Python and mathematical concepts
+to solve a problem. In this scenario, we use prime factorization.
+"""
 
 def minOperations(n):
-    """function to solve the problem"""
-    if n < 0 :
+    """Calculates the minimum number of operations needed to result
+    in exactly n 'H' characters in the file.
+    
+    Args:
+        n (int): The target number of 'H' characters.
+    
+    Returns:
+        int: The fewest number of operations needed to achieve exactly n 'H' 
+             characters, or 0 if it is impossible to achieve.
+    """
+    if n <= 1:
         return 0
-    operations= 0
-    factor=2
+    
+    operations = 0
+    factor = 2
 
     while n > 1:
         while n % factor == 0:
             operations += factor
             n //= factor
         factor += 1
+    
     return operations
-
-
- 
